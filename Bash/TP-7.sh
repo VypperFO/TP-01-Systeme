@@ -7,4 +7,6 @@
 
 # Recherche dans le répertoire présent et les enfants, les fichiers ayant le même nom et les indiquer dans un fichier sortie
 
+
+#TODO
 find ./ -type d | grep "/inc/" > list

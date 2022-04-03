@@ -8,6 +8,8 @@
 # Un script qui va parcourir les fichiers images (.jpg ou .gif ou .png) du répertoire x. Pour chaque image, le script devra
 # créer une image .png de taille dim dans le répertoire y.
 
+
+#TODO
 for i in ${args}.png ;
 do
     convert "$i" -resize $args "${i%.*}.png" ;

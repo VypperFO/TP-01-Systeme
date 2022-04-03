@@ -14,6 +14,8 @@
 # Dès qu'un joueur ne peut plus jouer (donc se retrouve sans carte), il perd.
 
 
+
+#TODO
 declare -a playerOne
 declare -a playerTwo
 winned=$false
