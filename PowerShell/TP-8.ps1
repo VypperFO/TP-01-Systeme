@@ -43,8 +43,6 @@ while (!$winned) {
         $roundCount++
     }
     elseif ([int]$playerTwo[0] -eq [int]$playerOne[0]) {
-        $playerOne += $playerOne[0]
-        $playerTwo += $playerTwo[0]
         $playerOne.RemoveAt(0)
         $playerTwo.RemoveAt(0)
         $roundCount++
