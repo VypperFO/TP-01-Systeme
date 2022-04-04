@@ -48,20 +48,20 @@ do
         playerTwo+=(${playerTwo[0]})
         unset playerOne[0]
         unset playerTwo[0]
-        break
+        
     elif [[ ${playerOne[0]} -gt ${playerTwo[0]} ]]
     then
         playerOne+=(${playerTwo[0]})
         unset playerTwo[0]
         playerOne+=(${playerOne[0]})
         unset playerOne[0]
-        roundCount=$(($roundCount+1))
+        ((roundCount+=1))
     else
         playerTwo+=(${playerOne[0]})
         unset playerOne[0]
         playerTwo+=(${playerTwo[0]})
         unset playerTwo[0]
-        roundCount=$(($roundCount+1))
+        ((roundCount+=1))
     fi
     
     if [[ ${#playerOne[@]} -eq 1 ]]
