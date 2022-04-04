@@ -23,7 +23,7 @@ try {
             Write-Host "$($list[$i]), aucun processus a ce numero"
         }
         else {
-            $nameOfProcess = Get-Process -Id $($list[$i]) | Select-Object -ExpandProperty Name
+            $nameOfProcess = Get-Process -ErrorAction Stop -Id $($list[$i]) | Select-Object -ExpandProperty Name
             Write-Output "$nameOfProcess a ce numero"
         }
     }
