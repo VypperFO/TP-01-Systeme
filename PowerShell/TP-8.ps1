@@ -62,7 +62,7 @@ while (!$winned) {
         Write-Output "Nombre de rondes: $roundCount"
         $winned = $true
     }
-    else {
+    elseif ($playerTwo.Count -eq 1) {
         Write-Output "Le joueur un gagne la partie!"
         Write-Output "Nombre de rondes: $roundCount"
         $winned = $true
