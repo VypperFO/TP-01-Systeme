@@ -24,9 +24,9 @@ if [[ $nbInput =~ $re ]] ; then
     
     
     for i in ${entries[@]}; do
-        if ps -p $i > /dev/null;
+        if ps -W -p $i > /dev/null;
         then
-            nomPID=(ps -p $i -o comm=)
+            nomPID=(ps -W -p $i -o comm=)
             echo "$i, $nomPID a ce numero"
         else
             echo "$i, aucun processus"
