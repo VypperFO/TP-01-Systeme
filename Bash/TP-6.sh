@@ -10,15 +10,9 @@
 
 
 #TODO
-for i in ${args}.png ;
-do
-    convert "$i" -resize $args "${i%.*}.png" ;
-done
-for i in *.jpg ;
-do
-    convert "$i" "${i%.*}.jpg" ;
-done
-for i in *.gif ;
-do
-    convert "$i" "${i%.*}.jpg" ;
-done
+cd $0
+magick mogrify -format png *.gif >> $1
+magick mogrify -format png *.jpg >> $1
+magick mogrify -format png *.png >> $1
+cd $1
+magick mogrify -resize $2 *.png
