@@ -13,9 +13,6 @@
 # - En cas d'égalité, chacun reprend sa carte.
 # Dès qu'un joueur ne peut plus jouer (donc se retrouve sans carte), il perd.
 
-
-
-#TODO
 declare -a playerOne
 declare -a playerTwo
 winned=$false
@@ -41,37 +38,32 @@ while [ true ]
 do
     if [[ ${playerOne[0]} -eq ${playerTwo[0]} ]]
     then
-        echo "something"
-        echo ${#playerOne[@]}
-        echo ${#playerTwo[@]}
-        playerOne+=(${playerOne[0]})
-        playerTwo+=(${playerTwo[0]})
-        unset playerOne[0]
-        unset playerTwo[0]
+        playerOne=("${playerOne[@]:1}")
+        playerTwo=("${playerTwo[@]:1}")
         
     elif [[ ${playerOne[0]} -gt ${playerTwo[0]} ]]
     then
         playerOne+=(${playerTwo[0]})
-        unset playerTwo[0]
+        playerTwo=("${playerTwo[@]:1}")
         playerOne+=(${playerOne[0]})
-        unset playerOne[0]
+        playerOne=("${playerOne[@]:1}")
         ((roundCount+=1))
     else
         playerTwo+=(${playerOne[0]})
-        unset playerOne[0]
+        playerOne=("${playerOne[@]:1}")
         playerTwo+=(${playerTwo[0]})
-        unset playerTwo[0]
+        playerTwo=("${playerTwo[@]:1}")
         ((roundCount+=1))
     fi
     
-    if [[ ${#playerOne[@]} -eq 1 ]]
+    if [[ ${#playerOne[@]} -eq $null ]]
     then
         echo "Le joueur deux gagne la partie!"
         echo "Nombre de rondes: $roundCount"
         break
-    elif [[ ${#playerTwo[@]} -eq 1 ]]
+    elif [[ ${#playerTwo[@]} -eq $null ]]
     then
-        echo "Le joueur one gagne la partie!"
+        echo "Le joueur un gagne la partie!"
         echo "Nombre de rondes: $roundCount"
         break
     fi

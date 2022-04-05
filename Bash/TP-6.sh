@@ -10,9 +10,9 @@
 
 
 #TODO
-cd $0
-magick mogrify -format png *.gif >> $1
-magick mogrify -format png *.jpg >> $1
-magick mogrify -format png *.png >> $1
 cd $1
-magick mogrify -resize $2 *.png
+magick mogrify -format png *.gif >> $2
+magick mogrify -format png *.jpg >> $2
+magick mogrify -format png *.png >> $2
+cd $2
+magick mogrify -resize $3 *.png
