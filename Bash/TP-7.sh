@@ -7,6 +7,8 @@
 
 # Recherche dans le répertoire présent et les enfants, les fichiers ayant le même nom et les indiquer dans un fichier sortie
 
-
-#TODO
-find ./ -type d | grep "/inc/" > list
+find . -type f -follow -printf "%s\t%p\n" | find .. -type f -follow -printf "%s\t%p\n" | 
+while read path ; do
+    filename="${*/##}"
+    echo "$path" >> sortie.txt
+done

@@ -8,8 +8,10 @@
 
 #TODO
 try {
-    
+    #Get-ChildItem -Depth 2 |  Select -ExpandProperty Name | Out-File sortie.txt
+    Get-ChildItem -Recurse -File -ErrorAction Stop |
+    Select-Object Name | sortie.txt
 }
 catch {
-    
+    Write-Output "Une erreur est survenu"
 }

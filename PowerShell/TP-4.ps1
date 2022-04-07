@@ -16,7 +16,7 @@ try {
     $list = @(1..65536 | Get-Random -Count $nbInput) 
     $list
     
-    Write-Output "--------------------"
+    Write-Output "--------------------------------------"
 
     for ($i = 0; $i -lt $list.Count; $i++) {
         if (-not (Get-Process -Id $list[$i] -ErrorAction SilentlyContinue)) {

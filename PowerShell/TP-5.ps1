@@ -10,7 +10,9 @@
 try {
     $repertoirePresent = Get-Location -ErrorAction Stop
     
-    Get-ChildItem -Path $repertoirePresent -Depth 1 | Sort-Object Length -Descending | Select-Object Length, Name, Directory | Format-Table -AutoSize -ErrorAction Stop
+    Get-ChildItem -Path $repertoirePresent -Depth 1 | Sort-Object Length -Descending | 
+    Select-Object Length, Name, Directory | 
+    Format-Table -AutoSize -ErrorAction Stop
 }
 catch {
     Write-Output "Une erreur est survenu"
